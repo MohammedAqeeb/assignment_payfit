@@ -14,10 +14,15 @@ class GymPreviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 13, right: 13, top: 6, bottom: 20),
+      padding: const EdgeInsets.only(
+        left: 13,
+        right: 13,
+        top: 6,
+        bottom: 20,
+      ),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 360,
+        height: 370,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -45,14 +50,19 @@ class GymPreviewScreen extends StatelessWidget {
                     children: [
                       Text(
                         gym.name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: headLineText1.copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: const Color.fromRGBO(25, 29, 35, 1),
                         ),
                       ),
+                      const SizedBox(height: 6),
                       Text(
                         gym.location,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: labelText.copyWith(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
@@ -62,7 +72,7 @@ class GymPreviewScreen extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '~  ${gym.distance}',
+                    '~  ${gym.distance} km',
                     style: labelText.copyWith(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
@@ -118,9 +128,7 @@ class GymPreviewScreen extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
             image: DecorationImage(
-              image: CachedNetworkImageProvider(
-                  // 'https://www.hussle.com/blog/wp-content/uploads/2020/12/Gym-structure-1080x675.png',
-                  gym.image),
+              image: CachedNetworkImageProvider(gym.image),
               fit: BoxFit.cover,
             ),
           ),

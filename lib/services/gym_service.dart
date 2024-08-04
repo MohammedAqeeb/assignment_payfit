@@ -18,7 +18,7 @@ class GymCenterService {
 
     streamSubscription = db
         .collection('gym')
-        .orderBy('distance', descending: true)
+        .orderBy('distance', descending: false)
         .snapshots()
         .listen(
       (value) {

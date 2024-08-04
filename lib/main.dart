@@ -5,7 +5,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:paygo_assignment/app/details/detail_screen.dart';
 
 import 'app/home/widgets/dashborad_screen.dart';
 import 'firebase_options.dart';
@@ -42,7 +41,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
       ),
-      home: const DetailScreen(),
+      home: const DashboardScreen(),
     );
   }
 }
